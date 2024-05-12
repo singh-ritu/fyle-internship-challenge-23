@@ -1,0 +1,12 @@
+<div class="flex items-center border-solid border-2 w-full mb-2 p-6">
+  <img src={{owner.avatar_url}} alt="Avatar" class="h-40 w-40 rounded-full mr-2">
+  <div>
+    <h1>{{owner.name}}</h1>
+    <h4 *ngIf="owner.bio">Bio: {{owner.bio}}</h4>
+    <h4>Username: {{owner.login}}</h4>
+    <div>
+      <h4 *ngIf="owner.twitter_username">Twitter: {{owner.twitter_username}}</h4>
+    </div>
+  </div>
+</div>
+<h3 *ngIf="owner.html_url">Github: {{owner.html_url}}</h3>

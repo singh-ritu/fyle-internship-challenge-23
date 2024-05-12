@@ -1,5 +1,18 @@
-<div class="grid h-screen place-items-center">
-  <div class="font-bold text-3xl">
-    Fyle Internship Challenge
+<div class="mt-10 mx-6">
+  <div class="w-2/5">
+    <app-search (search)="onSearch($event)"></app-search>
+    <app-user-card *ngIf="owner.name" [owner]="owner"></app-user-card>
   </div>
+  <div class="mt-10">
+    <app-repository-list class="grid grid-cols-2 gap-6" *ngIf="repositories" [repositories]="repositories"></app-repository-list>
+  </div>
+  <app-empty-state [message]="errorMessage"></app-empty-state>
+  <app-pagination
+    *ngIf="totalPages > 0"
+    [currentPage]="currentPage"
+    [totalPages]="totalPages"
+    (previousPage)="onPreviousPage()"
+    (nextPage)="onNextPage()"
+  ></app-pagination>
+  <app-page-size-dropdown (pageSizeChange)="onPageSizeChange($event)"></app-page-size-dropdown>
 </div>

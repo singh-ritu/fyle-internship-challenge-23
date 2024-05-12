@@ -1,0 +1,10 @@
+<div class="flex place-items-center mb-6">
+  <h4>Page size: </h4>
+  <select
+    class="block ml-2 bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+    [(ngModel)]="selectedPageSize"
+    (change)="onPageSizeChange()"
+  >
+    <option *ngFor="let pageSize of pageSizes" [value]="pageSize">{{ pageSize }}</option>
+  </select>
+</div>
